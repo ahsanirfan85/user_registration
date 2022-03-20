@@ -1,3 +1,9 @@
+// Requiring Dot ENV to load environment variables into process.env
+require('dotenv').config()
+
+// Setting PORT
+const PORT = process.env.PORT;
+
 // Requiring & Mounting Express - Required to run Node Apps.
 const express = require("express");
 const app = express();
@@ -18,5 +24,7 @@ app.use(cookieSession({
 // Mounting the EJS Template
 app.set("view engine", "ejs");
 
-// Setting PORT
-const PORT = process.env.PORT;
+// Listen Function
+app.listen(PORT, ()=> {
+  console.log(`Server is listening for requests on port ${PORT}`);
+});
