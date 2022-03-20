@@ -1,0 +1,31 @@
+nav {
+  background-color: rgb(102, 47, 255);
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#nav-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-basis: 50%
+}
+
+#nav-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-basis: 50%
+}
+
+#nav-right div {
+  margin: 10px;
+}
+
+body > div {
+  padding: 25px;
+}

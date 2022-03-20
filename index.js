@@ -1,4 +1,6 @@
-// Web Serve Configuration
+"use strict";
+
+// Web Server Configuration
 
   // (1) Requiring Dot ENV to load environment variables into process.env
   require('dotenv').config()
@@ -9,6 +11,7 @@
   // (3) Requiring & Mounting Express - Required to run Node Apps.
   const express = require("express");
   const app = express();
+  app.use(express.static("public")); // Required to serve static files.
 
   // (4) Requiring Body Parser - Required to parse req.body, which is how the body of the HTTP request can be viewed.
   const bodyParser = require("body-parser");
