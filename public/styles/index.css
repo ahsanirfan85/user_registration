@@ -1,3 +1,7 @@
+body {
+  margin: 0px;
+}
+
 nav {
   background-color: rgb(102, 47, 255);
   padding: 25px;
@@ -5,7 +9,6 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-radius: 10px;
 }
 
 #nav-left {
