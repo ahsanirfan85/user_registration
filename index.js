@@ -31,28 +31,39 @@
 
   // (1) GET Requests
 
-    // (A) When you first access the website
+    // (A) When you first access the website (GET Request)
     app.get("/", (req, res) => {
     const templateVars = {
 
     }
     res.render("unlogged", templateVars);
+    console.log("User accessed the website.");
     });
 
-    // (B) Login page
+    // (B) GET Request to the login page
     app.get("/login", (req, res) => {
       const templateVars = {
   
       }
     res.render("login", templateVars);
+    console.log("User accessed the login page.");
     });
 
-    // (C) Register page
+    // (C) GET Request to the Register page
     app.get("/register", (req, res) => {
     const templateVars = {
 
     }
     res.render("register", templateVars);
+    console.log("User accessed the register page.");
+    });
+  
+  // (2) POST Requests
+
+    // (A) Registering a user; POST request to Register page
+    app.post("/register", (req, res) => {
+      console.log(req.body.email);
+      console.log(req.body.password);
     });
 
 // Listen Function

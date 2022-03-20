@@ -9,7 +9,20 @@
 </head>
 <body>
   <%- include('partials/_header') %>
-  <div>You are not logged in. Please login or register for an account.</div>
-  <div>This is the registration page.</div>
+  <div>
+    <form action="/register" method="POST">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" placeholder="name@example.com">
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="">
+      </div>
+      <div>
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </div>
 </body>
 </html>

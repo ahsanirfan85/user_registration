@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "local": "./node_modules/.bin/nodemon --watch server -e js index.js"
+    "local": "./node_modules/.bin/nodemon --watch index.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
