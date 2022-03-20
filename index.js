@@ -39,6 +39,22 @@
     res.render("unlogged", templateVars);
     });
 
+    // (B) Login page
+    app.get("/login", (req, res) => {
+      const templateVars = {
+  
+      }
+    res.render("login", templateVars);
+    });
+
+    // (C) Register page
+    app.get("/register", (req, res) => {
+    const templateVars = {
+
+    }
+    res.render("register", templateVars);
+    });
+
 // Listen Function
 app.listen(PORT, ()=> {
   console.log(`Server is listening for requests on port ${PORT}`);
