@@ -27,6 +27,17 @@
   // (7) Mounting the EJS Template
   app.set("view engine", "ejs");
 
+  // (8) Configuring the Heroku Database
+  const { Client  } = require('pg');
+  const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+      rejectUnauthorized: false
+    }
+  });
+  client.connect();
+
+
 // HTTP Routes
 
   // (1) GET Requests
@@ -62,8 +73,21 @@
 
     // (A) Registering a user; POST request to Register page
     app.post("/register", (req, res) => {
-      console.log(req.body.email);
-      console.log(req.body.password);
+      const email = req.body.email;
+      const password = req.body.password;
+      console.log(email);
+      console.log(password);
+      client.query(`
+      INSERT INTO users (email, password)
+      VALUES ($1,$2)
+      RETURNING *;
+      `,[email, password])
+        .then(data => {
+          console.log(data.rows[0]);
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
     });
 
 // Listen Function
